@@ -7,19 +7,16 @@ function nameClickHandler(beerDetail) {
   return event => {
     if (event.target.className === 'list-group-item')
     event.preventDefault()
-    console.log(event.target.dataset.id)
     const clickBeer = Beer.findBeerById(parseInt(event.target.dataset.id))
-    console.log(clickBeer)
     beerInfoDom(clickBeer, beerDetail)
   }
 }
 
+// needs a refactor
 function detailsHandler(detailsDomElement) {
   return event => {
     if(event.target.id === 'edit-beer') {
-      console.log(event.target.id)
       const toEditBeer = Beer.findBeerById(parseInt(event.target.dataset.id))
-      console.log(toEditBeer)
       beerEditDom(toEditBeer, detailsDomElement)
     } else if (event.target.id === 'submit') {
       event.preventDefault()

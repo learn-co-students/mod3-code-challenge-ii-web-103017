@@ -1,4 +1,6 @@
 class Beer {
+
+  // It would be better to use the private scope class constructor here, but I'm hit or miss on the syntax. If I had more time, I would look up that syntax to protect my Beer.all which my code relies on.
   constructor(data) {
     this.id = data.id
     this.name = data.name
@@ -11,6 +13,8 @@ class Beer {
   renderName() {
     return `<li class="list-group-item" data-id=${this.id}>${this.name}</li>`
   }
+
+  //How do you render text for display and edit using html tags?
 
   render() {
     return `
