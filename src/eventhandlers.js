@@ -3,7 +3,6 @@ function showBeerName(beer, beerNameDom) {
 }
 
 function nameClickHandler(beerDetail) {
-  // beerDetail.clear()
   return event => {
     if (event.target.className === 'list-group-item')
     event.preventDefault()
