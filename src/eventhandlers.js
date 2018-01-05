@@ -16,9 +16,11 @@ function nameClickHandler(beerDetail) {
 function detailsHandler(detailsDomElement) {
   return event => {
     if(event.target.id === 'edit-beer') {
+      // to Edit Beer could serve as a variable for both if statements in the refactoring.
       const toEditBeer = Beer.findBeerById(parseInt(event.target.dataset.id))
       beerEditDom(toEditBeer, detailsDomElement)
     } else if (event.target.id === 'submit') {
+      //All of this below should be abstracted to its own function.
       event.preventDefault()
       const id = parseInt(event.target.dataset.id)
       const name = document.getElementById('edit-beer-name').value
